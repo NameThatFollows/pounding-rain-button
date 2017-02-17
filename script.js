@@ -1,12 +1,18 @@
 var pianoFiles = [
-    new Audio('piano1.mp3'),
-    new Audio('piano2.mp3'),
-    new Audio('piano3.mp3'),
-    new Audio('piano4.mp3'),
+    new Audio('Piano1.mp3'),
+    new Audio('Piano2.mp3'),
+    new Audio('Piano3.mp3'),
+    new Audio('Piano4.mp3'),
 ]
 
+var firstPlay = true;
+
 function playSound() {
-    var fileToPlay = Math.floor((Math.random() * 4));
-    console.log(fileToPlay);
+    if (firstPlay) {
+        var fileToPlay = 3;
+        firstPlay = false;
+    } else {
+        var fileToPlay = Math.floor((Math.random() * 4));
+    }
     pianoFiles[fileToPlay].play();
 }
