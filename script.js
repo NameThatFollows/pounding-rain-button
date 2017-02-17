@@ -8,11 +8,12 @@ var pianoFiles = [
 var firstPlay = true;
 
 function playSound() {
+    var fileToPlay;
     if (firstPlay) {
-        var fileToPlay = 3;
+        fileToPlay = 2;
         firstPlay = false;
     } else {
-        var fileToPlay = Math.floor((Math.random() * 4));
+        fileToPlay = Math.floor((Math.random() * 4));
     }
     pianoFiles[fileToPlay].play();
 }
